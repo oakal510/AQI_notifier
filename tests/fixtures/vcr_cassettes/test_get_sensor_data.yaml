@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+      X-API-Key:
+      - "YOUR OWN API KEY HERE"
+    method: GET
+    uri: https://api.purpleair.com/v1/sensors/194203
+  response:
+    body:
+      string: "{\n  \"api_version\" : \"V1.0.13-0.0.55\",\n  \"time_stamp\" : 1714274502,\n
+        \ \"data_time_stamp\" : 1714274491,\n  \"sensor\" : {\n    \"sensor_index\"
+        : 194203,\n    \"last_modified\" : 1694198263,\n    \"date_created\" : 1693596340,\n
+        \   \"last_seen\" : 1714274430,\n    \"private\" : 0,\n    \"is_owner\" :
+        0,\n    \"name\" : \"Bankview\",\n    \"icon\" : 0,\n    \"location_type\"
+        : 0,\n    \"model\" : \"PA-II-FLEX\",\n    \"hardware\" : \"3.0+OPENLOG+NO-DISK+RV3028+BME68X+PMSX003-A+PMSX003-B\",\n
+        \   \"led_brightness\" : 35,\n    \"firmware_version\" : \"7.04\",\n    \"rssi\"
+        : -65,\n    \"uptime\" : 4202,\n    \"pa_latency\" : 801,\n    \"memory\"
+        : 5328,\n    \"position_rating\" : 0,\n    \"latitude\" : 51.036434,\n    \"longitude\"
+        : -114.10456,\n    \"altitude\" : 3555,\n    \"channel_state\" : 3,\n    \"channel_flags\"
+        : 0,\n    \"channel_flags_manual\" : 0,\n    \"channel_flags_auto\" : 0,\n
+        \   \"confidence\" : 100,\n    \"confidence_auto\" : 100,\n    \"confidence_manual\"
+        : 100,\n    \"humidity\" : 30,\n    \"humidity_a\" : 30,\n    \"humidity_b\"
+        : 30,\n    \"temperature\" : 61,\n    \"temperature_a\" : 61,\n    \"temperature_b\"
+        : 61,\n    \"pressure\" : 883.39,\n    \"pressure_a\" : 883.39,\n    \"pressure_b\"
+        : 883.39,\n    \"voc\" : 87.2,\n    \"voc_b\" : 87.18,\n    \"analog_input\"
+        : 0.0,\n    \"pm1.0\" : 1.0,\n    \"pm1.0_a\" : 1.3,\n    \"pm1.0_b\" : 0.8,\n
+        \   \"pm2.5\" : 1.3,\n    \"pm2.5_a\" : 1.6,\n    \"pm2.5_b\" : 0.9,\n    \"pm2.5_alt\"
+        : 1.1,\n    \"pm2.5_alt_a\" : 1.4,\n    \"pm2.5_alt_b\" : 0.8,\n    \"pm10.0\"
+        : 1.6,\n    \"pm10.0_a\" : 1.8,\n    \"pm10.0_b\" : 1.5,\n    \"scattering_coefficient\"
+        : 4.9,\n    \"scattering_coefficient_a\" : 5.8,\n    \"scattering_coefficient_b\"
+        : 4.1,\n    \"deciviews\" : 4.6,\n    \"deciviews_a\" : 5.3,\n    \"deciviews_b\"
+        : 4.0,\n    \"visual_range\" : 245.6,\n    \"visual_range_a\" : 230.6,\n    \"visual_range_b\"
+        : 260.6,\n    \"0.3_um_count\" : 330,\n    \"0.3_um_count_a\" : 384,\n    \"0.3_um_count_b\"
+        : 276,\n    \"0.5_um_count\" : 92,\n    \"0.5_um_count_a\" : 109,\n    \"0.5_um_count_b\"
+        : 75,\n    \"1.0_um_count\" : 6,\n    \"1.0_um_count_a\" : 9,\n    \"1.0_um_count_b\"
+        : 4,\n    \"2.5_um_count\" : 0,\n    \"2.5_um_count_a\" : 0,\n    \"2.5_um_count_b\"
+        : 0,\n    \"5.0_um_count\" : 0,\n    \"5.0_um_count_a\" : 0,\n    \"5.0_um_count_b\"
+        : 0,\n    \"10.0_um_count\" : 0,\n    \"10.0_um_count_a\" : 0,\n    \"10.0_um_count_b\"
+        : 0,\n    \"pm1.0_cf_1\" : 1.0,\n    \"pm1.0_cf_1_a\" : 1.27,\n    \"pm1.0_cf_1_b\"
+        : 0.75,\n    \"pm1.0_atm\" : 1.0,\n    \"pm1.0_atm_a\" : 1.27,\n    \"pm1.0_atm_b\"
+        : 0.75,\n    \"pm2.5_atm\" : 1.3,\n    \"pm2.5_atm_a\" : 1.64,\n    \"pm2.5_atm_b\"
+        : 0.92,\n    \"pm2.5_cf_1\" : 1.3,\n    \"pm2.5_cf_1_a\" : 1.64,\n    \"pm2.5_cf_1_b\"
+        : 0.92,\n    \"pm10.0_atm\" : 1.6,\n    \"pm10.0_atm_a\" : 1.77,\n    \"pm10.0_atm_b\"
+        : 1.46,\n    \"pm10.0_cf_1\" : 1.6,\n    \"pm10.0_cf_1_a\" : 1.77,\n    \"pm10.0_cf_1_b\"
+        : 1.46,\n    \"primary_key_a\" : \"MVAJJS2OV4OSMH9M\",\n    \"stats\" : {\"pm2.5\"
+        : 1.3, \"pm2.5_10minute\" : 1.3, \"pm2.5_30minute\" : 1.2, \"pm2.5_60minute\"
+        : 1.2, \"pm2.5_6hour\" : 2.3, \"pm2.5_24hour\" : 2.6, \"pm2.5_1week\" : 4.2,
+        \"time_stamp\" : 1714274430},\n    \"stats_a\" : {\"pm2.5\" : 1.6, \"pm2.5_10minute\"
+        : 1.5, \"pm2.5_30minute\" : 1.4, \"pm2.5_60minute\" : 1.4, \"pm2.5_6hour\"
+        : 2.7, \"pm2.5_24hour\" : 3.0, \"pm2.5_1week\" : 4.7, \"time_stamp\" : 1714274430},\n
+        \   \"stats_b\" : {\"pm2.5\" : 0.9, \"pm2.5_10minute\" : 1.1, \"pm2.5_30minute\"
+        : 1.0, \"pm2.5_60minute\" : 0.9, \"pm2.5_6hour\" : 1.9, \"pm2.5_24hour\" :
+        2.1, \"pm2.5_1week\" : 3.6, \"time_stamp\" : 1714274430}\n  }\n}"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Content-Length:
+      - '3282'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 28 Apr 2024 03:21:42 GMT
+      Server:
+      - Google Frontend
+      X-Cloud-Trace-Context:
+      - f9b6b6fc0bcebfda50691c1156b6a407
+    status:
+      code: 200
+      message: OK
+version: 1

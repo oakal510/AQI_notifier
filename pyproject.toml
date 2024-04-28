@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "aqi-notifier"
+version = "0.1.0"
+description = ""
+authors = ["Alla Barbalat <allabarbalat@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.1"
+requests = "^2.31.0"
+rich = "^13.7.1"
+pytest = "^8.2.0"
+vcrpy = "^6.0.1"
+python-aqi = "^0.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
