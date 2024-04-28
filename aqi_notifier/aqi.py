@@ -1,5 +1,6 @@
 import aqi as pyaqi
 
+
 class EPA_AQI:
 
     def __init__(self, aqi):
@@ -42,6 +43,3 @@ class EPA_AQI:
 
     def __str__(self):
         return f"Air Quality Index: {self.aqi}: {self.status}"
-
-
-    

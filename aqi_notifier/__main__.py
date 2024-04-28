@@ -1,12 +1,20 @@
-from dotenv import dotenv_values
 import argparse
 import sys
-from aqi_notifier import parse_sensor_list_file, fetch_aqi
+
+from dotenv import dotenv_values
+
+from aqi_notifier import fetch_aqi, parse_sensor_list_file
 
 
 def argument_parser():
-    parser = argparse.ArgumentParser(prog="AQI Notifier", description='Monitor air quality sensors.')
-    parser.add_argument('sensor_ID_list', type=str, help='A text file containing a list of Purple Air sensor IDs to monitor.')  
+    parser = argparse.ArgumentParser(
+        prog="AQI Notifier", description="Monitor air quality sensors."
+    )
+    parser.add_argument(
+        "sensor_ID_list",
+        type=str,
+        help="A text file containing a list of Purple Air sensor IDs to monitor.",
+    )
     args = parser.parse_args()
 
     return args
@@ -17,8 +25,8 @@ def main():
     try:
 
         config = dotenv_values()
-        api_key = config['api_key']
-     
+        api_key = config["api_key"]
+
         arguments = argument_parser()
         file = arguments.sensor_ID_list
         sensor_list = parse_sensor_list_file(file)
@@ -33,4 +41,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
