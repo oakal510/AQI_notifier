@@ -5,6 +5,7 @@ import vcr
 
 from aqi_notifier import fetch_aqi, get_sensor_data, parse_sensor_list_file
 from aqi_notifier.aqi import EPA_AQI
+from aqi_notifier.notify import Notifier
 
 
 def test_parse_sensor_list_file():
@@ -52,18 +53,18 @@ def test_from_pm_raw():
 
 def test_epa_aqi_status():
 
-    assert EPA_AQI(1).status == "Good"
-    assert EPA_AQI(50).status == "Good"
-    assert EPA_AQI(51).status == "Moderate"
-    assert EPA_AQI(100).status == "Moderate"
-    assert EPA_AQI(101).status == "Unhealthy for Sensitive Groups"
-    assert EPA_AQI(150).status == "Unhealthy for Sensitive Groups"
-    assert EPA_AQI(151).status == "Unhealthy"
-    assert EPA_AQI(200).status == "Unhealthy"
-    assert EPA_AQI(201).status == "Very Unhealthy"
-    assert EPA_AQI(300).status == "Very Unhealthy"
-    assert EPA_AQI(301).status == "Hazardous"
-    assert EPA_AQI(500).status == "Hazardous"
+    assert EPA_AQI(1).status == "good"
+    assert EPA_AQI(50).status == "good"
+    assert EPA_AQI(51).status == "moderate"
+    assert EPA_AQI(100).status == "moderate"
+    assert EPA_AQI(101).status == "unhealthy for sensitive groups"
+    assert EPA_AQI(150).status == "unhealthy for sensitive groups"
+    assert EPA_AQI(151).status == "unhealthy"
+    assert EPA_AQI(200).status == "unhealthy"
+    assert EPA_AQI(201).status == "very unhealthy"
+    assert EPA_AQI(300).status == "very unhealthy"
+    assert EPA_AQI(301).status == "hazardous"
+    assert EPA_AQI(500).status == "hazardous"
 
 
 def test_epa_aqi_recommendations():
@@ -104,7 +105,7 @@ def test_fetch_aqi_aqi_zero():
         aqi = fetch_aqi(sensor_list, api_key)
 
         assert aqi.aqi == 0
-        assert aqi.status == "Good"
+        assert aqi.status == "good"
         assert aqi.recommendations == "Enjoy time outdoors! Breathe the fresh air."
 
 
@@ -118,5 +119,23 @@ def test_fetch_aqi_greater_than_zero():
         aqi = fetch_aqi(sensor_list, api_key)
 
         assert aqi.aqi == 30
-        assert aqi.status == "Good"
+        assert aqi.status == "good"
         assert aqi.recommendations == "Enjoy time outdoors! Breathe the fresh air."
+
+
+def test_send_sms():
+
+    api_key = "YOUR OWN API KEY HERE"
+    Telynx_phone_number = "YOUR OWN TELNYX PHONE NUMBER HERE"
+    recipient_phone_number = "YOUR OWN RECIPIENT PHONE NUMBER HERE"
+
+    with vcr.use_cassette(
+        "tests/fixtures/vcr_cassettes/test_send_sms.yaml",
+        filter_headers=["Authorization"],
+    ):
+
+        notifier = Notifier(api_key, Telynx_phone_number)
+        result = notifier.send_sms(recipient_phone_number, "This is a test message.")
+
+        assert result.text == "This is a test message."
+        assert result.type == "SMS"

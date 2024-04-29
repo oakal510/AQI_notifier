@@ -14,17 +14,17 @@ class EPA_AQI:
     @property
     def status(self) -> str:
         if self.aqi < 51:
-            return "Good"
+            return "good"
         elif self.aqi < 101:
-            return "Moderate"
+            return "moderate"
         elif self.aqi < 151:
-            return "Unhealthy for Sensitive Groups"
+            return "unhealthy for sensitive groups"
         elif self.aqi < 201:
-            return "Unhealthy"
+            return "unhealthy"
         elif self.aqi < 301:
-            return "Very Unhealthy"
+            return "very unhealthy"
         else:
-            return "Hazardous"
+            return "hazardous"
 
     @property
     def recommendations(self) -> str:

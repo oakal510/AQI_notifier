@@ -13,6 +13,7 @@ rich = "^13.7.1"
 pytest = "^8.2.0"
 vcrpy = "^6.0.1"
 python-aqi = "^0.6.1"
+telnyx = "^2.1.1"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -25,7 +26,8 @@ mypy = "^1.10.0"
 module = [
     "vcr",
     "requests",
-    "aqi"
+    "aqi",
+    "telnyx"
 ]
 ignore_missing_imports = true
 
