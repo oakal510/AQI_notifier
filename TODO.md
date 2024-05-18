@@ -1,5 +1,5 @@
 Priorities
-- figure out why AWS says my program failed when it didn't fail
+- Update Docker files to use slim build
 - update Docker file and then AWS lambda with my sensor list instead of test list when deployed
 - create events in AWS for my program to run daily
 - refactor code / reorganize to move functions from init
