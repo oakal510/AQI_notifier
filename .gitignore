@@ -4,4 +4,5 @@
 __pycache__
 .venv
 .pytest_cache
+.mypy_cache
 test_send_sms.yaml
