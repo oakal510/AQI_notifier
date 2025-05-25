@@ -6,3 +6,4 @@ __pycache__
 .pytest_cache
 .mypy_cache
 test_send_sms.yaml
+.DS_Store

@@ -16,7 +16,6 @@ python-aqi = "^0.6.1"
 telnyx = "^2.1.1"
 awslambdaric = "^2.0.11"
 
-
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
 isort = "^5.13.2"
